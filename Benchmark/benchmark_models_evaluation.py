@@ -7,11 +7,9 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 # Import regression models
 from sklearn import linear_model
-from sklearn.neural_network import MLPRegressor
 from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
 import xgboost
 from sklearn.neighbors import KNeighborsRegressor
-from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.svm import SVR
 from sklearn.cross_decomposition import PLSRegression
 from sklearn.pipeline import make_pipeline
@@ -31,22 +29,12 @@ feature_types = [
     "prott5", "prott5_with_esm"
 ]
 
-# Define regression models dictionary
+# Define regression models dictionary (10 models selected)
 models_dict = {
     "Linear": linear_model.LinearRegression(),
     "Ridge": linear_model.RidgeCV(),
-
     "Lasso": linear_model.LassoCV(max_iter=100000, tol=1e-3),
     "ElasticNet": linear_model.ElasticNetCV(max_iter=100000, tol=1e-3),
-    # --------------------------------------------------------------------------
-
-    "NeuralNet": MLPRegressor(
-        hidden_layer_sizes=(5,), max_iter=1000, activation="relu", solver="adam",
-        alpha=0.001, batch_size="auto", learning_rate="constant", learning_rate_init=0.001,
-        power_t=0.5, momentum=0.9, nesterovs_momentum=True, shuffle=True, random_state=1,
-        tol=0.0001, verbose=False, warm_start=False, early_stopping=False,
-        validation_fraction=0.1, beta_1=0.9, beta_2=0.999, epsilon=1e-08
-    ),
 
     "RandomForest": RandomForestRegressor(
         n_estimators=100, criterion="friedman_mse", max_depth=None, min_samples_split=2,
@@ -61,8 +49,6 @@ models_dict = {
     ),
 
     "KNN": KNeighborsRegressor(n_neighbors=5),
-
-    "GaussianProcess": GaussianProcessRegressor(alpha=1e-10, random_state=None),
 
     "PLSRegression": PLSRegression(n_components=5),
 
