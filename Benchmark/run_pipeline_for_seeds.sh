@@ -51,7 +51,7 @@ for SEED in "${SEEDS[@]}"; do
     echo ">>> [2/4] Entering ./feature_generation directory, extracting features"
     cd "$ROOT_DIR"/feature_generation
     python extract_prott5.py
-    python extract_features_train_test.py
+    python extract_AAindex_onehot_georgiev.py
     python combine_features.py
 
     # ================= 3. Model Prediction & Evaluation =================
