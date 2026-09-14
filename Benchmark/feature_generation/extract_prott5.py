@@ -16,7 +16,7 @@ from transformers import T5EncoderModel, T5Tokenizer
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # 1. Define input file paths
-FULL_CSV = os.path.join(current_dir, "../../Beta-lactamase_evopro_esm-score_with_seq.csv")
+FULL_CSV = os.path.join(current_dir, "../../data1/ESM_Score/Beta-lactamase_evopro_esm-score_with_seq.csv")
 TRAIN_CSV = os.path.join(current_dir, "../data_split/train_set_N96.csv")
 TEST_CSV = os.path.join(current_dir, "../data_split/test_set_Remaining.csv")
 
