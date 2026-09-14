@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # 1. Set file path and random seed (for reproducibility)
-file_path = "../../Beta-lactamase_evopro_esm-score_with_seq.csv"
+file_path = "../../data1/ESM_Score/Beta-lactamase_evopro_esm-score_with_seq.csv"
 random_seed = 100
 np.random.seed(random_seed)
 
